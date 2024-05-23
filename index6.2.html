@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const inputField = document.createElement('input');
+        const displayHeading = document.createElement('h2');
+        
+        
+        displayHeading.textContent = '';
+
+       
+        document.body.appendChild(inputField);
+        document.body.appendChild(displayHeading);
+
+  
+        let timeoutId;
+
+     
+        inputField.addEventListener('input', () => {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
+
+            timeoutId = setTimeout(() => {
+                displayHeading.textContent = inputField.value;
+            }, 300);
+        });
+    </script>
+</body>
+</html>
